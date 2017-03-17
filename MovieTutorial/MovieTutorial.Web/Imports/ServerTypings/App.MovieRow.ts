@@ -7,6 +7,7 @@
         Year?: number;
         ReleaseDate?: string;
         Runtime?: number;
+        Kind?: MovieKind;
     }
 
     export namespace MovieRow {
@@ -22,9 +23,10 @@
             export declare const Year: string;
             export declare const ReleaseDate: string;
             export declare const Runtime: string;
+            export declare const Kind: string;
         }
 
-        ['MovieId', 'Title', 'Description', 'Storyline', 'Year', 'ReleaseDate', 'Runtime'].forEach(x => (<any>Fields)[x] = x);
+        ['MovieId', 'Title', 'Description', 'Storyline', 'Year', 'ReleaseDate', 'Runtime', 'Kind'].forEach(x => (<any>Fields)[x] = x);
     }
 }
 

@@ -13,13 +13,15 @@ namespace MovieTutorial.App {
             super(container);
         }
 
-        protected getQuickSearchFields():
-            Serenity.QuickSearchField[] {
+        protected getQuickSearchFields(): Serenity.QuickSearchField[] {
+            let fld = MovieRow.Fields;
+            let txt = (s) => Q.text("Db." +
+                MovieRow.localTextPrefix + "." + s).toLowerCase();
             return [
                 { name: "", title: "all" },
-                { name: MovieRow.Description, title: "description" },
-                { name: MovieRow.Storyline, title: "storyline" },
-                { name: MovieRow.Year, title: "year" }
+                { name: fld.Description, title: txt(fld.Description) },
+                { name: fld.Storyline, title: txt(fld.Storyline) },
+                { name: fld.Year, title: txt(fld.Year) }
             ];
         }
     }

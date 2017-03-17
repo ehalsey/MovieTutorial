@@ -1127,6 +1127,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\App.MovieForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\App.MovieKind.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\App.MovieRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1559,6 +1562,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703171535_MovieType.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703170836_Movies_Data.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703161622_Movies.cs" />
     <Compile Include="Modules\Administration\AdministrationNavigation.cs" />
@@ -1582,6 +1586,7 @@
     <Compile Include="Modules\App\Movie\MovieColumns.cs" />
     <Compile Include="Modules\App\Movie\MovieEndpoint.cs" />
     <Compile Include="Modules\App\Movie\MovieForm.cs" />
+    <Compile Include="Modules\App\Movie\MovieKind.cs" />
     <Compile Include="Modules\App\Movie\MoviePage.cs" />
     <Compile Include="Modules\App\Movie\MovieRepository.cs" />
     <Compile Include="Modules\App\Movie\MovieRow.cs" />
