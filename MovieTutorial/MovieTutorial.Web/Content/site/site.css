@@ -7437,15 +7437,13 @@ section.content > .s-DataGrid {
   width: 45%;
   float: right;
 }
-.s-Movietutorial-MovieDialog > .size {
-  width: 650px;
-}
-.s-Movietutorial-MovieDialog .caption {
-  width: 150px;
-}
 .s-App-MovieDialog > .size {
   width: 650px;
 }
 .s-App-MovieDialog .caption {
   width: 150px;
+}
+.s-App-grid-alignRight {
+  color: red;
+  text-align: right;
 }

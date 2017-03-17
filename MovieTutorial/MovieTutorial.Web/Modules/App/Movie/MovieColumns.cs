@@ -13,7 +13,7 @@ namespace MovieTutorial.App.Columns
     [BasedOnRow(typeof(Entities.MovieRow))]
     public class MovieColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight, HeaderCssClass("s-App-grid-alignRight")]
         public Int32 MovieId { get; set; }
         [EditLink]
         public String Title { get; set; }
@@ -21,7 +21,7 @@ namespace MovieTutorial.App.Columns
         public String Storyline { get; set; }
         public Int32 Year { get; set; }
         public DateTime ReleaseDate { get; set; }
-        [DisplayName("Runtime in Minutes"), Width(150), AlignRight]
+        [Width(100), AlignRight, HeaderCssClass("s-App-grid-alignRight")]
         public Int32 Runtime { get; set; }
     }
 }
