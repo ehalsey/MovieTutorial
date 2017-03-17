@@ -21,28 +21,28 @@ namespace MovieTutorial.App.Entities
             set { Fields.MovieId[this] = value; }
         }
 
-        [DisplayName("Title"), Size(200), NotNull, QuickSearch]
+        [DisplayName("Title"), Size(200), NotNull, QuickSearch(SearchType.StartsWith)]
         public String Title
         {
             get { return Fields.Title[this]; }
             set { Fields.Title[this] = value; }
         }
 
-        [DisplayName("Description"), Size(1000)]
+        [DisplayName("Description"), Size(1000), QuickSearch]
         public String Description
         {
             get { return Fields.Description[this]; }
             set { Fields.Description[this] = value; }
         }
 
-        [DisplayName("Storyline"), Size(-1)]
+        [DisplayName("Storyline"), Size(-1), QuickSearch]
         public String Storyline
         {
             get { return Fields.Storyline[this]; }
             set { Fields.Storyline[this] = value; }
         }
 
-        [DisplayName("Year")]
+        [DisplayName("Year"), QuickSearch(SearchType.Equals, numericOnly: 1)]
         public Int32? Year
         {
             get { return Fields.Year[this]; }

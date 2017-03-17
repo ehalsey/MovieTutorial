@@ -12,5 +12,15 @@ namespace MovieTutorial.App {
         constructor(container: JQuery) {
             super(container);
         }
+
+        protected getQuickSearchFields():
+            Serenity.QuickSearchField[] {
+            return [
+                { name: "", title: "all" },
+                { name: MovieRow.Description, title: "description" },
+                { name: MovieRow.Storyline, title: "storyline" },
+                { name: MovieRow.Year, title: "year" }
+            ];
+        }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-namespace MovieTutorial.App {
+﻿namespace MovieTutorial.App {
     export interface MovieRow {
         MovieId?: number;
         Title?: string;
@@ -16,13 +15,13 @@ namespace MovieTutorial.App {
         export const localTextPrefix = 'App.Movie';
 
         export namespace Fields {
-            export declare const MovieId;
-            export declare const Title;
-            export declare const Description;
-            export declare const Storyline;
-            export declare const Year;
-            export declare const ReleaseDate;
-            export declare const Runtime;
+            export declare const MovieId: string;
+            export declare const Title: string;
+            export declare const Description: string;
+            export declare const Storyline: string;
+            export declare const Year: string;
+            export declare const ReleaseDate: string;
+            export declare const Runtime: string;
         }
 
         ['MovieId', 'Title', 'Description', 'Storyline', 'Year', 'ReleaseDate', 'Runtime'].forEach(x => (<any>Fields)[x] = x);
