@@ -353,6 +353,61 @@ declare namespace MovieTutorial.Administration {
         }
     }
 }
+declare namespace MovieTutorial.App {
+    class MovieForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface MovieForm {
+        Title: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        Storyline: Serenity.StringEditor;
+        Year: Serenity.IntegerEditor;
+        ReleaseDate: Serenity.DateEditor;
+        Runtime: Serenity.IntegerEditor;
+    }
+}
+declare namespace MovieTutorial.App {
+    interface MovieRow {
+        MovieId?: number;
+        Title?: string;
+        Description?: string;
+        Storyline?: string;
+        Year?: number;
+        ReleaseDate?: string;
+        Runtime?: number;
+    }
+    namespace MovieRow {
+        const idProperty = "MovieId";
+        const nameProperty = "Title";
+        const localTextPrefix = "App.Movie";
+        namespace Fields {
+            const MovieId: any;
+            const Title: any;
+            const Description: any;
+            const Storyline: any;
+            const Year: any;
+            const ReleaseDate: any;
+            const Runtime: any;
+        }
+    }
+}
+declare namespace MovieTutorial.App {
+    namespace MovieService {
+        const baseUrl = "App/Movie";
+        function Create(request: Serenity.SaveRequest<MovieRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MovieRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MovieRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MovieRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
 declare namespace MovieTutorial.Common.Pages {
     interface UploadResponse extends Serenity.ServiceResponse {
         TemporaryFile?: string;
@@ -703,6 +758,26 @@ declare namespace MovieTutorial.Administration {
     interface UserRoleDialogOptions {
         userID: number;
         username: string;
+    }
+}
+declare namespace MovieTutorial.App {
+    class MovieDialog extends Serenity.EntityDialog<MovieRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: MovieForm;
+    }
+}
+declare namespace MovieTutorial.App {
+    class MovieGrid extends Serenity.EntityGrid<MovieRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof MovieDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace MovieTutorial {
