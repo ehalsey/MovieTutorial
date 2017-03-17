@@ -9,7 +9,7 @@ namespace MovieTutorial.App.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("MovieTutorial"), TableName("[mov].[Movie]"), DisplayName("Movie"), InstanceName("Movie"), TwoLevelCached]
+    [ConnectionKey("MovieTutorial"), TableName("[mov].[Movie]"), DisplayName("Movies"), InstanceName("Movie"), TwoLevelCached]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class MovieRow : Row, IIdRow, INameRow
@@ -49,14 +49,14 @@ namespace MovieTutorial.App.Entities
             set { Fields.Year[this] = value; }
         }
 
-        [DisplayName("Release Date")]
+        [DisplayName("Release<br/>Date")]
         public DateTime? ReleaseDate
         {
             get { return Fields.ReleaseDate[this]; }
             set { Fields.ReleaseDate[this] = value; }
         }
 
-        [DisplayName("Runtime (mins)")]
+        [DisplayName("Runtime\n(mins)")]
         public Int32? Runtime
         {
             get { return Fields.Runtime[this]; }

@@ -7439,11 +7439,11 @@ section.content > .s-DataGrid {
 }
 .s-App-MovieDialog > .size {
   width: 650px;
+  height: 500px;
 }
 .s-App-MovieDialog .caption {
   width: 150px;
 }
 .s-App-grid-alignRight {
-  color: red;
   text-align: right;
 }
