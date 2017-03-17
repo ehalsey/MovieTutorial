@@ -1,10 +1,10 @@
 ﻿using FluentMigrator;
 using System;
 
-namespace MovieTutorial.Migrations.DefaultDB
+namespace MovieTutorial.Migrations.MovieTutorialDB
 {
     [Migration(201703161622)]
-    public class DefaultDB_201703161622_Movies : AutoReversingMigration
+    public class MovieTutorialDB_201703161622_Movies : AutoReversingMigration
     {
         public override void Up()
         {
