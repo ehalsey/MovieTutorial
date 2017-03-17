@@ -1562,6 +1562,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703171552_TestField.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703171535_MovieType.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703170836_Movies_Data.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703161622_Movies.cs" />

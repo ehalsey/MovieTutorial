@@ -70,6 +70,13 @@ namespace MovieTutorial.App.Entities
             set { Fields.Kind[this] = (Int32?)value; }
         }
 
+        [DisplayName("TestField")]
+        public String TestField
+        {
+            get { return Fields.TestField[this]; }
+            set { Fields.TestField[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.MovieId; }
@@ -97,6 +104,7 @@ namespace MovieTutorial.App.Entities
             public DateTimeField ReleaseDate;
             public Int32Field Runtime;
             public readonly Int32Field Kind;
+            public StringField TestField;
 
             public RowFields()
                 : base()

@@ -300,7 +300,7 @@ var MovieTutorial;
         }(Serenity.PrefixedContext));
         MovieForm.formKey = 'App.Movie';
         App.MovieForm = MovieForm;
-        [['Title', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.TextAreaEditor; }], ['Storyline', function () { return Serenity.TextAreaEditor; }], ['Year', function () { return Serenity.IntegerEditor; }], ['ReleaseDate', function () { return Serenity.DateEditor; }], ['Runtime', function () { return Serenity.IntegerEditor; }], ['Kind', function () { return Serenity.EnumEditor; }]].forEach(function (x) { return Object.defineProperty(MovieForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['Title', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.TextAreaEditor; }], ['Storyline', function () { return Serenity.TextAreaEditor; }], ['Year', function () { return Serenity.IntegerEditor; }], ['ReleaseDate', function () { return Serenity.DateEditor; }], ['Runtime', function () { return Serenity.IntegerEditor; }], ['TestField', function () { return Serenity.StringEditor; }], ['Kind', function () { return Serenity.EnumEditor; }]].forEach(function (x) { return Object.defineProperty(MovieForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(App = MovieTutorial.App || (MovieTutorial.App = {}));
 })(MovieTutorial || (MovieTutorial = {}));
 var MovieTutorial;
@@ -328,7 +328,7 @@ var MovieTutorial;
             var Fields;
             (function (Fields) {
             })(Fields = MovieRow.Fields || (MovieRow.Fields = {}));
-            ['MovieId', 'Title', 'Description', 'Storyline', 'Year', 'ReleaseDate', 'Runtime', 'Kind'].forEach(function (x) { return Fields[x] = x; });
+            ['MovieId', 'Title', 'Description', 'Storyline', 'Year', 'ReleaseDate', 'Runtime', 'Kind', 'TestField'].forEach(function (x) { return Fields[x] = x; });
         })(MovieRow = App.MovieRow || (App.MovieRow = {}));
     })(App = MovieTutorial.App || (MovieTutorial.App = {}));
 })(MovieTutorial || (MovieTutorial = {}));

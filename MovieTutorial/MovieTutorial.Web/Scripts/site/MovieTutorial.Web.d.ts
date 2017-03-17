@@ -366,6 +366,7 @@ declare namespace MovieTutorial.App {
         Year: Serenity.IntegerEditor;
         ReleaseDate: Serenity.DateEditor;
         Runtime: Serenity.IntegerEditor;
+        TestField: Serenity.StringEditor;
         Kind: Serenity.EnumEditor;
     }
 }
@@ -386,6 +387,7 @@ declare namespace MovieTutorial.App {
         ReleaseDate?: string;
         Runtime?: number;
         Kind?: MovieKind;
+        TestField?: string;
     }
     namespace MovieRow {
         const idProperty = "MovieId";
@@ -400,6 +402,7 @@ declare namespace MovieTutorial.App {
             const ReleaseDate: string;
             const Runtime: string;
             const Kind: string;
+            const TestField: string;
         }
     }
 }
