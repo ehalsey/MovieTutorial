@@ -23,5 +23,7 @@ namespace MovieTutorial.App.Columns
         public DateTime ReleaseDate { get; set; }
         [Width(100), AlignRight, HeaderCssClass("s-App-grid-alignRight")]
         public Int32 Runtime { get; set; }
+        public String TestField { get; set; }
+        public MovieKind Kind { get; set; }
     }
 }
