@@ -36,7 +36,7 @@ namespace MovieTutorial.App.Endpoints
             return new MyRepository().Retrieve(connection, request);
         }
 
-        public ListResponse<MyRow> List(IDbConnection connection, ListRequest request)
+        public ListResponse<MyRow> List(IDbConnection connection, MovieListRequest request)
         {
             return new MyRepository().List(connection, request);
         }

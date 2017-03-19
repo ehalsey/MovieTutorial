@@ -1617,6 +1617,7 @@
     <Compile Include="Modules\App\Movie\MovieEndpoint.cs" />
     <Compile Include="Modules\App\Movie\MovieForm.cs" />
     <Compile Include="Modules\App\Movie\MovieKind.cs" />
+    <Compile Include="Modules\App\Movie\MovieListRequest.cs" />
     <Compile Include="Modules\App\Movie\MoviePage.cs" />
     <Compile Include="Modules\App\Movie\MovieRepository.cs" />
     <Compile Include="Modules\App\Movie\MovieRow.cs" />

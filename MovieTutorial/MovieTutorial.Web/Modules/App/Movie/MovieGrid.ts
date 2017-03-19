@@ -24,5 +24,21 @@ namespace MovieTutorial.App {
                 { name: fld.Year, title: txt(fld.Year) }
             ];
         }
+
+        protected getQuickFilters() {
+            let items = super.getQuickFilters();
+
+            var genreListFilter = Q.first(items, x =>
+                x.field == MovieRow.Fields.GenreList);
+
+            genreListFilter.handler = h => {
+                var request = (h.request as MovieListRequest);
+                var values = (h.widget as Serenity.LookupEditor).values;
+                request.Genres = values.map(x => parseInt(x, 10));
+                h.handled = true;
+            };
+
+            return items;
+        }
     }
 }

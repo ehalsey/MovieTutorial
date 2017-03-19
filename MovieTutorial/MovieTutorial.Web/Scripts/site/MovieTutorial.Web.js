@@ -1628,6 +1628,19 @@ var MovieTutorial;
                     { name: fld.Year, title: txt(fld.Year) }
                 ];
             };
+            MovieGrid.prototype.getQuickFilters = function () {
+                var items = _super.prototype.getQuickFilters.call(this);
+                var genreListFilter = Q.first(items, function (x) {
+                    return x.field == App.MovieRow.Fields.GenreList;
+                });
+                genreListFilter.handler = function (h) {
+                    var request = h.request;
+                    var values = h.widget.values;
+                    request.Genres = values.map(function (x) { return parseInt(x, 10); });
+                    h.handled = true;
+                };
+                return items;
+            };
             return MovieGrid;
         }(Serenity.EntityGrid));
         MovieGrid = __decorate([

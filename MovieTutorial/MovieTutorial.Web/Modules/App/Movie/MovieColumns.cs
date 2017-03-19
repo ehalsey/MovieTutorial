@@ -25,7 +25,7 @@ namespace MovieTutorial.App.Columns
         public Int32 Runtime { get; set; }
         public String TestField { get; set; }
         public MovieKind Kind { get; set; }
-        [Width(200), GenreListFormatter]
+        [Width(200), GenreListFormatter, QuickFilter]
         public List<Int32> GenreList { get; set; }
     }
 }

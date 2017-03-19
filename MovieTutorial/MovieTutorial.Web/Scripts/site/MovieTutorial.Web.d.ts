@@ -974,6 +974,7 @@ declare namespace MovieTutorial.App {
         protected getService(): string;
         constructor(container: JQuery);
         protected getQuickSearchFields(): Serenity.QuickSearchField[];
+        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
     }
 }
 declare namespace MovieTutorial {
