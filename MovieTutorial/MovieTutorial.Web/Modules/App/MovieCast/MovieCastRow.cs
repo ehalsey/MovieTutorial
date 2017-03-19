@@ -30,7 +30,7 @@ namespace MovieTutorial.App.Entities
 
         [DisplayName("Actor/Actress"), NotNull, ForeignKey("[mov].[Person]", "PersonId")]
         [LeftJoin("jPerson"), TextualField("PersonFirstname")]
-        [LookupEditor(typeof(PersonRow))]
+        [LookupEditor(typeof(PersonRow),InplaceAdd =true, DialogType = "MovieTutorial.App.PersonDialog")]
         public Int32? PersonId
         {
             get { return Fields.PersonId[this]; }

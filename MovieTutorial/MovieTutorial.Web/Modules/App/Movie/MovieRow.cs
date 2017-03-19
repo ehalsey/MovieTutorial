@@ -87,6 +87,7 @@ namespace MovieTutorial.App.Entities
             set { Fields.GenreList[this] = value; }
         }
 
+        [MasterDetailRelation(foreignKey: "MovieId", IncludeColumns = "PersonFullname")]
         [DisplayName("Cast List"), NotMapped]
         public List<MovieCastRow> CastList
         {
