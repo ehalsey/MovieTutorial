@@ -13,8 +13,9 @@
         Runtime: Serenity.IntegerEditor;
         TestField: Serenity.StringEditor;
         Kind: Serenity.EnumEditor;
+        GenreId: Serenity.LookupEditor;
     }
 
-    [['Title', () => Serenity.StringEditor], ['Description', () => Serenity.TextAreaEditor], ['Storyline', () => Serenity.TextAreaEditor], ['Year', () => Serenity.IntegerEditor], ['ReleaseDate', () => Serenity.DateEditor], ['Runtime', () => Serenity.IntegerEditor], ['TestField', () => Serenity.StringEditor], ['Kind', () => Serenity.EnumEditor]].forEach(x => Object.defineProperty(MovieForm.prototype, <string>x[0], { get: function () { return this.w(x[0], (x[1] as any)()); }, enumerable: true, configurable: true }));
+    [['Title', () => Serenity.StringEditor], ['Description', () => Serenity.TextAreaEditor], ['Storyline', () => Serenity.TextAreaEditor], ['Year', () => Serenity.IntegerEditor], ['ReleaseDate', () => Serenity.DateEditor], ['Runtime', () => Serenity.IntegerEditor], ['TestField', () => Serenity.StringEditor], ['Kind', () => Serenity.EnumEditor], ['GenreId', () => Serenity.LookupEditor]].forEach(x => Object.defineProperty(MovieForm.prototype, <string>x[0], { get: function () { return this.w(x[0], (x[1] as any)()); }, enumerable: true, configurable: true }));
 }
 

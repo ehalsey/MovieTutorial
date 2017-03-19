@@ -1121,6 +1121,9 @@
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Content>
     <Content Include="wkhtmltopdf-license.txt" />
+    <TypeScriptCompile Include="Imports\ServerTypings\App.GenreColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\App.MovieColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1545,6 +1548,21 @@
     <TypeScriptCompile Include="Modules\Common\Helpers\BasicProgressDialog.ts" />
     <TypeScriptCompile Include="Modules\Common\Helpers\BulkServiceAction.ts" />
     <TypeScriptCompile Include="Scripts\typings\serenity\Serenity.CoreLib.d.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Movietutorial.GenreRow.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Movietutorial.GenreService.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Movietutorial.GenreForm.ts" />
+    <Content Include="Modules\App\Genre\GenreIndex.cshtml" />
+    <TypeScriptCompile Include="Imports\ServerTypings\App.GenreRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\App.GenreService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\App.GenreForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\App\Genre\GenreGrid.ts" />
+    <TypeScriptCompile Include="Modules\App\Genre\GenreDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1562,6 +1580,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703181722_Genres_Data.cs" />
+    <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703181708_Genres.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703171552_TestField.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703171535_MovieType.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703170836_Movies_Data.cs" />
@@ -1685,6 +1705,12 @@
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRow.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRepository.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionEndpoint.cs" />
+    <Compile Include="Modules\App\Genre\GenreRow.cs" />
+    <Compile Include="Modules\App\Genre\GenreColumns.cs" />
+    <Compile Include="Modules\App\Genre\GenreForm.cs" />
+    <Compile Include="Modules\App\Genre\GenreRepository.cs" />
+    <Compile Include="Modules\App\Genre\GenreEndpoint.cs" />
+    <Compile Include="Modules\App\Genre\GenrePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

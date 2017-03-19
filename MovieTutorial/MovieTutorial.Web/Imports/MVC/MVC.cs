@@ -30,6 +30,11 @@ namespace MVC
 
         public static class App
         {
+            public static class Genre
+            {
+                public const string GenreIndex = "~/Modules/App/Genre/GenreIndex.cshtml";
+            }
+
             public static class Movie
             {
                 public const string MovieIndex = "~/Modules/App/Movie/MovieIndex.cshtml";

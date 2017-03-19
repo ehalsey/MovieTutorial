@@ -356,6 +356,50 @@ declare namespace MovieTutorial.Administration {
 declare namespace MovieTutorial.App {
 }
 declare namespace MovieTutorial.App {
+    class GenreForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface GenreForm {
+        Name: Serenity.StringEditor;
+    }
+}
+declare namespace MovieTutorial.App {
+    interface GenreRow {
+        GenreId?: number;
+        Name?: string;
+    }
+    namespace GenreRow {
+        const idProperty = "GenreId";
+        const nameProperty = "Name";
+        const localTextPrefix = "App.Genre";
+        const lookupKey = "MovieTutorial.App.Genre";
+        function getLookup(): Q.Lookup<GenreRow>;
+        namespace Fields {
+            const GenreId: string;
+            const Name: string;
+        }
+    }
+}
+declare namespace MovieTutorial.App {
+    namespace GenreService {
+        const baseUrl = "App/Genre";
+        function Create(request: Serenity.SaveRequest<GenreRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<GenreRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<GenreRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<GenreRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace MovieTutorial.App {
+}
+declare namespace MovieTutorial.App {
     class MovieForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -368,6 +412,7 @@ declare namespace MovieTutorial.App {
         Runtime: Serenity.IntegerEditor;
         TestField: Serenity.StringEditor;
         Kind: Serenity.EnumEditor;
+        GenreId: Serenity.LookupEditor;
     }
 }
 declare namespace MovieTutorial.App {
@@ -388,6 +433,8 @@ declare namespace MovieTutorial.App {
         Runtime?: number;
         Kind?: MovieKind;
         TestField?: string;
+        GenreId?: number;
+        GenreName?: string;
     }
     namespace MovieRow {
         const idProperty = "MovieId";
@@ -403,6 +450,8 @@ declare namespace MovieTutorial.App {
             const Runtime: string;
             const Kind: string;
             const TestField: string;
+            const GenreId: string;
+            const GenreName: string;
         }
     }
 }
@@ -584,6 +633,46 @@ declare namespace MovieTutorial.Membership {
         DisplayName?: string;
         Email?: string;
         Password?: string;
+    }
+}
+declare namespace MovieTutorial.Movietutorial {
+    class GenreForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface GenreForm {
+        Name: Serenity.StringEditor;
+    }
+}
+declare namespace MovieTutorial.Movietutorial {
+    interface GenreRow {
+        GenreId?: number;
+        Name?: string;
+    }
+    namespace GenreRow {
+        const idProperty = "GenreId";
+        const nameProperty = "Name";
+        const localTextPrefix = "Movietutorial.Genre";
+        namespace Fields {
+            const GenreId: any;
+            const Name: any;
+        }
+    }
+}
+declare namespace MovieTutorial.Movietutorial {
+    namespace GenreService {
+        const baseUrl = "Movietutorial/Genre";
+        function Create(request: Serenity.SaveRequest<GenreRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<GenreRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<GenreRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<GenreRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
     }
 }
 declare namespace MovieTutorial {
@@ -773,6 +862,26 @@ declare namespace MovieTutorial.Administration {
     interface UserRoleDialogOptions {
         userID: number;
         username: string;
+    }
+}
+declare namespace MovieTutorial.App {
+    class GenreDialog extends Serenity.EntityDialog<GenreRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: GenreForm;
+    }
+}
+declare namespace MovieTutorial.App {
+    class GenreGrid extends Serenity.EntityGrid<GenreRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof GenreDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace MovieTutorial.App {

@@ -291,6 +291,60 @@ var MovieTutorial;
 (function (MovieTutorial) {
     var App;
     (function (App) {
+        var GenreForm = (function (_super) {
+            __extends(GenreForm, _super);
+            function GenreForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            return GenreForm;
+        }(Serenity.PrefixedContext));
+        GenreForm.formKey = 'App.Genre';
+        App.GenreForm = GenreForm;
+        [['Name', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(GenreForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(App = MovieTutorial.App || (MovieTutorial.App = {}));
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
+    var App;
+    (function (App) {
+        var GenreRow;
+        (function (GenreRow) {
+            GenreRow.idProperty = 'GenreId';
+            GenreRow.nameProperty = 'Name';
+            GenreRow.localTextPrefix = 'App.Genre';
+            GenreRow.lookupKey = 'MovieTutorial.App.Genre';
+            function getLookup() {
+                return Q.getLookup('MovieTutorial.App.Genre');
+            }
+            GenreRow.getLookup = getLookup;
+            var Fields;
+            (function (Fields) {
+            })(Fields = GenreRow.Fields || (GenreRow.Fields = {}));
+            ['GenreId', 'Name'].forEach(function (x) { return Fields[x] = x; });
+        })(GenreRow = App.GenreRow || (App.GenreRow = {}));
+    })(App = MovieTutorial.App || (MovieTutorial.App = {}));
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
+    var App;
+    (function (App) {
+        var GenreService;
+        (function (GenreService) {
+            GenreService.baseUrl = 'App/Genre';
+            var Methods;
+            (function (Methods) {
+            })(Methods = GenreService.Methods || (GenreService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                GenreService[x] = function (r, s, o) { return Q.serviceRequest(GenreService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = GenreService.baseUrl + '/' + x;
+            });
+        })(GenreService = App.GenreService || (App.GenreService = {}));
+    })(App = MovieTutorial.App || (MovieTutorial.App = {}));
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
+    var App;
+    (function (App) {
         var MovieForm = (function (_super) {
             __extends(MovieForm, _super);
             function MovieForm() {
@@ -300,7 +354,7 @@ var MovieTutorial;
         }(Serenity.PrefixedContext));
         MovieForm.formKey = 'App.Movie';
         App.MovieForm = MovieForm;
-        [['Title', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.TextAreaEditor; }], ['Storyline', function () { return Serenity.TextAreaEditor; }], ['Year', function () { return Serenity.IntegerEditor; }], ['ReleaseDate', function () { return Serenity.DateEditor; }], ['Runtime', function () { return Serenity.IntegerEditor; }], ['TestField', function () { return Serenity.StringEditor; }], ['Kind', function () { return Serenity.EnumEditor; }]].forEach(function (x) { return Object.defineProperty(MovieForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['Title', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.TextAreaEditor; }], ['Storyline', function () { return Serenity.TextAreaEditor; }], ['Year', function () { return Serenity.IntegerEditor; }], ['ReleaseDate', function () { return Serenity.DateEditor; }], ['Runtime', function () { return Serenity.IntegerEditor; }], ['TestField', function () { return Serenity.StringEditor; }], ['Kind', function () { return Serenity.EnumEditor; }], ['GenreId', function () { return Serenity.LookupEditor; }]].forEach(function (x) { return Object.defineProperty(MovieForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(App = MovieTutorial.App || (MovieTutorial.App = {}));
 })(MovieTutorial || (MovieTutorial = {}));
 var MovieTutorial;
@@ -328,7 +382,7 @@ var MovieTutorial;
             var Fields;
             (function (Fields) {
             })(Fields = MovieRow.Fields || (MovieRow.Fields = {}));
-            ['MovieId', 'Title', 'Description', 'Storyline', 'Year', 'ReleaseDate', 'Runtime', 'Kind', 'TestField'].forEach(function (x) { return Fields[x] = x; });
+            ['MovieId', 'Title', 'Description', 'Storyline', 'Year', 'ReleaseDate', 'Runtime', 'Kind', 'TestField', 'GenreId', 'GenreName'].forEach(function (x) { return Fields[x] = x; });
         })(MovieRow = App.MovieRow || (App.MovieRow = {}));
     })(App = MovieTutorial.App || (MovieTutorial.App = {}));
 })(MovieTutorial || (MovieTutorial = {}));
@@ -461,6 +515,55 @@ var MovieTutorial;
         Membership.SignUpForm = SignUpForm;
         [['DisplayName', function () { return Serenity.StringEditor; }], ['Email', function () { return Serenity.EmailEditor; }], ['ConfirmEmail', function () { return Serenity.EmailEditor; }], ['Password', function () { return Serenity.PasswordEditor; }], ['ConfirmPassword', function () { return Serenity.PasswordEditor; }]].forEach(function (x) { return Object.defineProperty(SignUpForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Membership = MovieTutorial.Membership || (MovieTutorial.Membership = {}));
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
+    var Movietutorial;
+    (function (Movietutorial) {
+        var GenreForm = (function (_super) {
+            __extends(GenreForm, _super);
+            function GenreForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            return GenreForm;
+        }(Serenity.PrefixedContext));
+        GenreForm.formKey = 'Movietutorial.Genre';
+        Movietutorial.GenreForm = GenreForm;
+        [['Name', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(GenreForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(Movietutorial = MovieTutorial.Movietutorial || (MovieTutorial.Movietutorial = {}));
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
+    var Movietutorial;
+    (function (Movietutorial) {
+        var GenreRow;
+        (function (GenreRow) {
+            GenreRow.idProperty = 'GenreId';
+            GenreRow.nameProperty = 'Name';
+            GenreRow.localTextPrefix = 'Movietutorial.Genre';
+            var Fields;
+            (function (Fields) {
+            })(Fields = GenreRow.Fields || (GenreRow.Fields = {}));
+            ['GenreId', 'Name'].forEach(function (x) { return Fields[x] = x; });
+        })(GenreRow = Movietutorial.GenreRow || (Movietutorial.GenreRow = {}));
+    })(Movietutorial = MovieTutorial.Movietutorial || (MovieTutorial.Movietutorial = {}));
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
+    var Movietutorial;
+    (function (Movietutorial) {
+        var GenreService;
+        (function (GenreService) {
+            GenreService.baseUrl = 'Movietutorial/Genre';
+            var Methods;
+            (function (Methods) {
+            })(Methods = GenreService.Methods || (GenreService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                GenreService[x] = function (r, s, o) { return Q.serviceRequest(GenreService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = GenreService.baseUrl + '/' + x;
+            });
+        })(GenreService = Movietutorial.GenreService || (Movietutorial.GenreService = {}));
+    })(Movietutorial = MovieTutorial.Movietutorial || (MovieTutorial.Movietutorial = {}));
 })(MovieTutorial || (MovieTutorial = {}));
 var MovieTutorial;
 (function (MovieTutorial) {
@@ -1370,6 +1473,53 @@ var MovieTutorial;
         ], UserRoleDialog);
         Administration.UserRoleDialog = UserRoleDialog;
     })(Administration = MovieTutorial.Administration || (MovieTutorial.Administration = {}));
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
+    var App;
+    (function (App) {
+        var GenreDialog = (function (_super) {
+            __extends(GenreDialog, _super);
+            function GenreDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new App.GenreForm(_this.idPrefix);
+                return _this;
+            }
+            GenreDialog.prototype.getFormKey = function () { return App.GenreForm.formKey; };
+            GenreDialog.prototype.getIdProperty = function () { return App.GenreRow.idProperty; };
+            GenreDialog.prototype.getLocalTextPrefix = function () { return App.GenreRow.localTextPrefix; };
+            GenreDialog.prototype.getNameProperty = function () { return App.GenreRow.nameProperty; };
+            GenreDialog.prototype.getService = function () { return App.GenreService.baseUrl; };
+            return GenreDialog;
+        }(Serenity.EntityDialog));
+        GenreDialog = __decorate([
+            Serenity.Decorators.registerClass(),
+            Serenity.Decorators.responsive()
+        ], GenreDialog);
+        App.GenreDialog = GenreDialog;
+    })(App = MovieTutorial.App || (MovieTutorial.App = {}));
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
+    var App;
+    (function (App) {
+        var GenreGrid = (function (_super) {
+            __extends(GenreGrid, _super);
+            function GenreGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            GenreGrid.prototype.getColumnsKey = function () { return 'App.Genre'; };
+            GenreGrid.prototype.getDialogType = function () { return App.GenreDialog; };
+            GenreGrid.prototype.getIdProperty = function () { return App.GenreRow.idProperty; };
+            GenreGrid.prototype.getLocalTextPrefix = function () { return App.GenreRow.localTextPrefix; };
+            GenreGrid.prototype.getService = function () { return App.GenreService.baseUrl; };
+            return GenreGrid;
+        }(Serenity.EntityGrid));
+        GenreGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], GenreGrid);
+        App.GenreGrid = GenreGrid;
+    })(App = MovieTutorial.App || (MovieTutorial.App = {}));
 })(MovieTutorial || (MovieTutorial = {}));
 var MovieTutorial;
 (function (MovieTutorial) {

@@ -77,6 +77,21 @@ namespace MovieTutorial.App.Entities
             set { Fields.TestField[this] = value; }
         }
 
+        [DisplayName("Genre"), ForeignKey("[mov].Genre", "GenreId"), LeftJoin("g")]
+        [LookupEditor(typeof(GenreRow), InplaceAdd = true)]
+        public Int32? GenreId
+        {
+            get { return Fields.GenreId[this]; }
+            set { Fields.GenreId[this] = value; }
+        }
+
+        [DisplayName("Genre"), Expression("g.Name"),QuickFilter]
+        public String GenreName
+        {
+            get { return Fields.GenreName[this]; }
+            set { Fields.GenreName[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.MovieId; }
@@ -105,6 +120,8 @@ namespace MovieTutorial.App.Entities
             public Int32Field Runtime;
             public readonly Int32Field Kind;
             public StringField TestField;
+            public readonly Int32Field GenreId;
+            public readonly StringField GenreName;
 
             public RowFields()
                 : base()

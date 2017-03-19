@@ -9,6 +9,8 @@
         Runtime?: number;
         Kind?: MovieKind;
         TestField?: string;
+        GenreId?: number;
+        GenreName?: string;
     }
 
     export namespace MovieRow {
@@ -26,9 +28,11 @@
             export declare const Runtime: string;
             export declare const Kind: string;
             export declare const TestField: string;
+            export declare const GenreId: string;
+            export declare const GenreName: string;
         }
 
-        ['MovieId', 'Title', 'Description', 'Storyline', 'Year', 'ReleaseDate', 'Runtime', 'Kind', 'TestField'].forEach(x => (<any>Fields)[x] = x);
+        ['MovieId', 'Title', 'Description', 'Storyline', 'Year', 'ReleaseDate', 'Runtime', 'Kind', 'TestField', 'GenreId', 'GenreName'].forEach(x => (<any>Fields)[x] = x);
     }
 }
 

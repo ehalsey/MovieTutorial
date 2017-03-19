@@ -23,5 +23,7 @@ namespace MovieTutorial.App.Forms
         public Int32 Runtime { get; set; }
         public String TestField { get; set; }
         public MovieKind Kind { get; set; }
+        public Int32 GenreId { get; set; }
+
     }
 }

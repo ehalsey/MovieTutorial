@@ -7447,3 +7447,15 @@ section.content > .s-DataGrid {
 .s-App-grid-alignRight {
   text-align: right;
 }
+.s-Movietutorial-GenreDialog > .size {
+  width: 650px;
+}
+.s-Movietutorial-GenreDialog .caption {
+  width: 150px;
+}
+.s-App-GenreDialog > .size {
+  width: 650px;
+}
+.s-App-GenreDialog .caption {
+  width: 150px;
+}
