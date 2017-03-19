@@ -6,6 +6,7 @@ namespace MovieTutorial.App.Entities
     using Serenity.Data;
     using Serenity.Data.Mapping;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.IO;
 
@@ -49,14 +50,14 @@ namespace MovieTutorial.App.Entities
             set { Fields.Year[this] = value; }
         }
 
-        [DisplayName("Release<br/>Date")]
+        [DisplayName("Release Date")]
         public DateTime? ReleaseDate
         {
             get { return Fields.ReleaseDate[this]; }
             set { Fields.ReleaseDate[this] = value; }
         }
 
-        [DisplayName("Runtime\n(mins)")]
+        [DisplayName("Runtime (mins)")]
         public Int32? Runtime
         {
             get { return Fields.Runtime[this]; }
@@ -77,19 +78,13 @@ namespace MovieTutorial.App.Entities
             set { Fields.TestField[this] = value; }
         }
 
-        [DisplayName("Genre"), ForeignKey("[mov].Genre", "GenreId"), LeftJoin("g")]
-        [LookupEditor(typeof(GenreRow), InplaceAdd = true)]
-        public Int32? GenreId
+        [DisplayName("Genres")]
+        [LookupEditor(typeof(GenreRow), Multiple = true), NotMapped]
+        [LinkingSetRelation(typeof(MovieGenresRow), "MovieId", "GenreId")]
+        public List<Int32> GenreList
         {
-            get { return Fields.GenreId[this]; }
-            set { Fields.GenreId[this] = value; }
-        }
-
-        [DisplayName("Genre"), Expression("g.Name"),QuickFilter]
-        public String GenreName
-        {
-            get { return Fields.GenreName[this]; }
-            set { Fields.GenreName[this] = value; }
+            get { return Fields.GenreList[this]; }
+            set { Fields.GenreList[this] = value; }
         }
 
         IIdField IIdRow.IdField
@@ -120,9 +115,7 @@ namespace MovieTutorial.App.Entities
             public Int32Field Runtime;
             public readonly Int32Field Kind;
             public StringField TestField;
-            public readonly Int32Field GenreId;
-            public readonly StringField GenreName;
-
+            public ListField<Int32> GenreList;
             public RowFields()
                 : base()
             {

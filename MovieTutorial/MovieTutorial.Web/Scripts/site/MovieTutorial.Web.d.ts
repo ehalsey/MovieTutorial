@@ -412,7 +412,41 @@ declare namespace MovieTutorial.App {
         Runtime: Serenity.IntegerEditor;
         TestField: Serenity.StringEditor;
         Kind: Serenity.EnumEditor;
-        GenreId: Serenity.LookupEditor;
+        GenreList: Serenity.LookupEditor;
+    }
+}
+declare namespace MovieTutorial.App {
+    interface MovieGenresRow {
+        MovieGenreId?: number;
+        MovieId?: number;
+        GenreId?: number;
+        MovieTitle?: string;
+        MovieDescription?: string;
+        MovieStoryline?: string;
+        MovieYear?: number;
+        MovieReleaseDate?: string;
+        MovieRuntime?: number;
+        MovieKind?: number;
+        MovieTestField?: string;
+        GenreName?: string;
+    }
+    namespace MovieGenresRow {
+        const idProperty = "MovieGenreId";
+        const localTextPrefix = "App.MovieGenres";
+        namespace Fields {
+            const MovieGenreId: string;
+            const MovieId: string;
+            const GenreId: string;
+            const MovieTitle: string;
+            const MovieDescription: string;
+            const MovieStoryline: string;
+            const MovieYear: string;
+            const MovieReleaseDate: string;
+            const MovieRuntime: string;
+            const MovieKind: string;
+            const MovieTestField: string;
+            const GenreName: string;
+        }
     }
 }
 declare namespace MovieTutorial.App {
@@ -433,8 +467,7 @@ declare namespace MovieTutorial.App {
         Runtime?: number;
         Kind?: MovieKind;
         TestField?: string;
-        GenreId?: number;
-        GenreName?: string;
+        GenreList?: number[];
     }
     namespace MovieRow {
         const idProperty = "MovieId";
@@ -450,8 +483,7 @@ declare namespace MovieTutorial.App {
             const Runtime: string;
             const Kind: string;
             const TestField: string;
-            const GenreId: string;
-            const GenreName: string;
+            const GenreList: string;
         }
     }
 }
@@ -675,6 +707,40 @@ declare namespace MovieTutorial.Movietutorial {
         }
     }
 }
+declare namespace MovieTutorial.Movietutorial {
+    interface MovieGenresRow {
+        MovieGenreId?: number;
+        MovieId?: number;
+        GenreId?: number;
+        MovieTitle?: string;
+        MovieDescription?: string;
+        MovieStoryline?: string;
+        MovieYear?: number;
+        MovieReleaseDate?: string;
+        MovieRuntime?: number;
+        MovieKind?: number;
+        MovieTestField?: string;
+        GenreName?: string;
+    }
+    namespace MovieGenresRow {
+        const idProperty = "MovieGenreId";
+        const localTextPrefix = "Movietutorial.MovieGenres";
+        namespace Fields {
+            const MovieGenreId: any;
+            const MovieId: any;
+            const GenreId: any;
+            const MovieTitle: string;
+            const MovieDescription: string;
+            const MovieStoryline: string;
+            const MovieYear: string;
+            const MovieReleaseDate: string;
+            const MovieRuntime: string;
+            const MovieKind: string;
+            const MovieTestField: string;
+            const GenreName: string;
+        }
+    }
+}
 declare namespace MovieTutorial {
     interface ScriptUserDefinition {
         Username?: string;
@@ -882,6 +948,11 @@ declare namespace MovieTutorial.App {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+    }
+}
+declare namespace MovieTutorial.App {
+    class GenreListFormatter implements Slick.Formatter {
+        format(ctx: Slick.FormatterContext): string;
     }
 }
 declare namespace MovieTutorial.App {
