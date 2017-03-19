@@ -7454,13 +7454,14 @@ section.content > .s-DataGrid {
   width: 150px;
 }
 .s-App-PersonDialog > .size {
-  width: 650px;
+  width: 700px;
+  height: 600px;
 }
 .s-App-PersonDialog .caption {
   width: 150px;
 }
 .s-App-PersonDialog .s-PersonMovieGrid > .grid-container {
-  height: 287px;
+  height: 500px;
 }
 .s-App-MovieCastEditDialog > .size {
   width: 450px;

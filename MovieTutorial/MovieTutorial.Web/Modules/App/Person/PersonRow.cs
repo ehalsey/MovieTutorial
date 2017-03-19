@@ -15,6 +15,20 @@ namespace MovieTutorial.App.Entities
     [LookupScript("MovieDB.Person")]
     public sealed class PersonRow : Row, IIdRow, INameRow
     {
+        [DisplayName("Primary Image"), Size(100), ImageUploadEditor(FilenameFormat = "Person/PrimaryImage/~")]
+        public string PrimaryImage
+        {
+            get { return Fields.PrimaryImage[this]; }
+            set { Fields.PrimaryImage[this] = value; }
+        }
+
+        [DisplayName("Gallery Images"),MultipleImageUploadEditor(FilenameFormat = "Person/GalleryImages/~")]
+        public string GalleryImages
+        {
+            get { return Fields.GalleryImages[this]; }
+            set { Fields.GalleryImages[this] = value; }
+        }
+
         [DisplayName("Person Id"), Identity]
         public Int32? PersonId
         {
@@ -90,6 +104,8 @@ namespace MovieTutorial.App.Entities
 
         public class RowFields : RowFieldsBase
         {
+            public StringField PrimaryImage;
+            public StringField GalleryImages;
             public Int32Field PersonId;
             public StringField Firstname;
             public StringField Lastname;
@@ -97,7 +113,7 @@ namespace MovieTutorial.App.Entities
             public StringField BirthPlace;
             public Int32Field Gender;
             public Int32Field Height;
-            public readonly StringField Fullname;
+            public StringField Fullname;
 
             public RowFields()
                 : base()

@@ -161,6 +161,18 @@
       <Link>wkhtmltopdf.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Data\MovieTutorial_Default_v1.ldf">
+      <DependentUpon>MovieTutorial_Default_v1.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\MovieTutorial_Default_v1.mdf" />
+    <Content Include="App_Data\Serene_Default_v1.ldf">
+      <DependentUpon>Serene_Default_v1.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Serene_Default_v1.mdf" />
+    <Content Include="App_Data\upload\Movie\PrimaryImage\00000\00000006_t7osxt2kcstua.jpg" />
+    <Content Include="App_Data\upload\Movie\PrimaryImage\00000\00000006_t7osxt2kcstua_t.jpg" />
+    <Content Include="App_Data\upload\Person\PrimaryImage\00000\00000004_ojyegpz6lt6v4.jpg" />
+    <Content Include="App_Data\upload\Person\PrimaryImage\00000\00000004_ojyegpz6lt6v4_t.jpg" />
     <Content Include="Content\aristo\aristo.css" />
     <Content Include="Content\aristo\images\icon_sprite.png" />
     <Content Include="Content\aristo\images\progress_bar.gif" />
@@ -1192,6 +1204,11 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <Content Include="App_Data\upload\Temporary\.temporary" />
+    <Content Include="App_Data\upload\Temporary\9624e280360b45f6816be2d9e4cafb35.orig" />
+    <Content Include="App_Data\upload\Temporary\c1a7b1c008ba405f9d3149cbc52823aa" />
+    <Content Include="App_Data\upload\Temporary\c1a7b1c008ba405f9d3149cbc52823aa.orig" />
+    <Content Include="App_Data\upload\Temporary\d5964f6a8fac41ac82b287bc15c40658.orig" />
     <None Include="Imports\ServerTypings\ServerTypings.log">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1625,6 +1642,7 @@
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703181752_MovieGenres - Copy.cs" />
+    <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703191021_PersonMovieImages.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703190708_PersonAndMovieCast.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703181722_Genres_Data.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703181708_Genres.cs" />
@@ -1774,9 +1792,7 @@
     <Compile Include="Modules\App\MovieCast\MovieCastRepository.cs" />
     <Compile Include="Modules\App\MovieCast\MovieCastEndpoint.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

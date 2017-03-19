@@ -15,6 +15,20 @@ namespace MovieTutorial.App.Entities
     [ModifyPermission("Administration:General")]
     public sealed class MovieRow : Row, IIdRow, INameRow
     {
+        [DisplayName("Primary Image"), Size(100),ImageUploadEditor(FilenameFormat = "Movie/PrimaryImage/~")]
+        public string PrimaryImage
+        {
+            get { return Fields.PrimaryImage[this]; }
+            set { Fields.PrimaryImage[this] = value; }
+        }
+
+        [DisplayName("Gallery Images"), MultipleImageUploadEditor(FilenameFormat = "Movie/GalleryImages/~")]
+        public string GalleryImages
+        {
+            get { return Fields.GalleryImages[this]; }
+            set { Fields.GalleryImages[this] = value; }
+        }
+
         [DisplayName("Movie Id"), Identity]
         public Int32? MovieId
         {
@@ -114,6 +128,9 @@ namespace MovieTutorial.App.Entities
 
         public class RowFields : RowFieldsBase
         {
+            public StringField PrimaryImage;
+            public StringField GalleryImages;
+
             public Int32Field MovieId;
             public StringField Title;
             public StringField Description;

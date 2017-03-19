@@ -15,6 +15,8 @@ namespace MovieTutorial.App.Forms
     {
         public String Firstname { get; set; }
         public String Lastname { get; set; }
+        public String PrimaryImage { get; set; }
+        public String GalleryImages { get; set; }
         public DateTime BirthDate { get; set; }
         public String BirthPlace { get; set; }
         public Gender Gender { get; set; }
