@@ -1121,7 +1121,13 @@
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Content>
     <Content Include="wkhtmltopdf-license.txt" />
+    <TypeScriptCompile Include="Imports\ServerTypings\App.Gender.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\App.GenreColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\App.MovieCastColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\App.MovieColumns.ts">
@@ -1133,10 +1139,16 @@
     <TypeScriptCompile Include="Imports\ServerTypings\App.MovieKind.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\App.MovieListRequest.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\App.MovieRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\App.MovieService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\App.PersonColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Administration\Language\LanguageDialog.ts" />
@@ -1184,6 +1196,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </None>
+    <TypeScriptCompile Include="Modules\App\MovieCast\MovieCastEditDialog.ts" />
+    <TypeScriptCompile Include="Modules\App\MovieCast\MovieCastEditor.ts" />
     <TypeScriptCompile Include="Modules\App\Movie\GenreListFormatter.ts" />
     <TypeScriptCompile Include="Modules\App\Movie\MovieDialog.ts" />
     <TypeScriptCompile Include="Modules\App\Movie\MovieGrid.ts" />
@@ -1549,9 +1563,6 @@
     <TypeScriptCompile Include="Modules\Common\Helpers\BasicProgressDialog.ts" />
     <TypeScriptCompile Include="Modules\Common\Helpers\BulkServiceAction.ts" />
     <TypeScriptCompile Include="Scripts\typings\serenity\Serenity.CoreLib.d.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\Movietutorial.GenreRow.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\Movietutorial.GenreService.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\Movietutorial.GenreForm.ts" />
     <Content Include="Modules\App\Genre\GenreIndex.cshtml" />
     <TypeScriptCompile Include="Imports\ServerTypings\App.GenreRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
@@ -1564,8 +1575,28 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\App\Genre\GenreGrid.ts" />
     <TypeScriptCompile Include="Modules\App\Genre\GenreDialog.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\Movietutorial.MovieGenresRow.ts" />
     <TypeScriptCompile Include="Imports\ServerTypings\App.MovieGenresRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\App\Person\PersonIndex.cshtml" />
+    <TypeScriptCompile Include="Imports\ServerTypings\App.PersonRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\App.PersonService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\App.PersonForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\App\Person\PersonGrid.ts" />
+    <TypeScriptCompile Include="Modules\App\Person\PersonDialog.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\App.MovieCastRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\App.MovieCastService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\App.MovieCastForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
   </ItemGroup>
@@ -1588,7 +1619,11 @@
     <Compile Include="Imports\ClientTypes\App.GenreListFormatterAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703181752_MovieGenres.cs" />
+    <Compile Include="Imports\ClientTypes\App.MovieCastEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703181752_MovieGenres - Copy.cs" />
+    <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703190708_PersonAndMovieCast.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703181722_Genres_Data.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703181708_Genres.cs" />
     <Compile Include="Migrations\MovieTutorialDb\MovieTutorialDB_201703171552_TestField.cs" />
@@ -1621,6 +1656,7 @@
     <Compile Include="Modules\App\Movie\MoviePage.cs" />
     <Compile Include="Modules\App\Movie\MovieRepository.cs" />
     <Compile Include="Modules\App\Movie\MovieRow.cs" />
+    <Compile Include="Modules\App\Person\Gender.cs" />
     <Compile Include="Modules\Common\Helpers\EmailHelper.cs" />
     <Compile Include="Modules\Common\Helpers\ExcelImportRequest.cs" />
     <Compile Include="Modules\Common\Dashboard\DashboardPageModel.cs" />
@@ -1723,6 +1759,17 @@
     <Compile Include="Modules\App\Genre\GenrePage.cs" />
     <Compile Include="Modules\App\MovieGenres\MovieGenresRow.cs" />
     <Compile Include="Modules\App\MovieGenres\MovieGenresRepository.cs" />
+    <Compile Include="Modules\App\Person\PersonRow.cs" />
+    <Compile Include="Modules\App\Person\PersonColumns.cs" />
+    <Compile Include="Modules\App\Person\PersonForm.cs" />
+    <Compile Include="Modules\App\Person\PersonRepository.cs" />
+    <Compile Include="Modules\App\Person\PersonEndpoint.cs" />
+    <Compile Include="Modules\App\Person\PersonPage.cs" />
+    <Compile Include="Modules\App\MovieCast\MovieCastRow.cs" />
+    <Compile Include="Modules\App\MovieCast\MovieCastColumns.cs" />
+    <Compile Include="Modules\App\MovieCast\MovieCastForm.cs" />
+    <Compile Include="Modules\App\MovieCast\MovieCastRepository.cs" />
+    <Compile Include="Modules\App\MovieCast\MovieCastEndpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

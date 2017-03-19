@@ -7447,15 +7447,24 @@ section.content > .s-DataGrid {
 .s-App-grid-alignRight {
   text-align: right;
 }
-.s-Movietutorial-GenreDialog > .size {
-  width: 650px;
-}
-.s-Movietutorial-GenreDialog .caption {
-  width: 150px;
-}
 .s-App-GenreDialog > .size {
   width: 650px;
 }
 .s-App-GenreDialog .caption {
   width: 150px;
+}
+.s-App-PersonDialog > .size {
+  width: 650px;
+}
+.s-App-PersonDialog .caption {
+  width: 150px;
+}
+.s-App-MovieCastEditDialog > .size {
+  width: 450px;
+}
+.s-App-MovieCastEditDialog .caption {
+  width: 120px;
+}
+.s-App-MovieCastEditDialog .s-PropertyGrid .categories {
+  height: 120px;
 }

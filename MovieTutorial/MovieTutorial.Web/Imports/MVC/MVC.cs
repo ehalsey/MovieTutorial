@@ -40,6 +40,11 @@ namespace MVC
                 public const string MovieIndex = "~/Modules/App/Movie/MovieIndex.cshtml";
             }
 
+            public static class Person
+            {
+                public const string PersonIndex = "~/Modules/App/Person/PersonIndex.cshtml";
+            }
+
         }
 
         public static class Common

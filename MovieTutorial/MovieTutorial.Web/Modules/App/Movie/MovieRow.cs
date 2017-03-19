@@ -87,6 +87,13 @@ namespace MovieTutorial.App.Entities
             set { Fields.GenreList[this] = value; }
         }
 
+        [DisplayName("Cast List"), NotMapped]
+        public List<MovieCastRow> CastList
+        {
+            get { return Fields.CastList[this]; }
+            set { Fields.CastList[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.MovieId; }
@@ -116,6 +123,7 @@ namespace MovieTutorial.App.Entities
             public readonly Int32Field Kind;
             public StringField TestField;
             public ListField<Int32> GenreList;
+            public readonly RowListField<MovieCastRow> CastList;
             public RowFields()
                 : base()
             {
