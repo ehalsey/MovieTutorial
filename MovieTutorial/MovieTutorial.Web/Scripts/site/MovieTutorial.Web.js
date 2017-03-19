@@ -1935,8 +1935,12 @@ var MovieTutorial;
         var PersonDialog = (function (_super) {
             __extends(PersonDialog, _super);
             function PersonDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
+                var _this = _super.call(this) || this;
                 _this.form = new App.PersonForm(_this.idPrefix);
+                _this.moviesGrid = new App.PersonMovieGrid(_this.byId("MoviesGrid"));
+                _this.tabs.on('tabsactivate', function (e, i) {
+                    _this.arrange();
+                });
                 return _this;
             }
             PersonDialog.prototype.getFormKey = function () { return App.PersonForm.formKey; };
@@ -1944,6 +1948,10 @@ var MovieTutorial;
             PersonDialog.prototype.getLocalTextPrefix = function () { return App.PersonRow.localTextPrefix; };
             PersonDialog.prototype.getNameProperty = function () { return App.PersonRow.nameProperty; };
             PersonDialog.prototype.getService = function () { return App.PersonService.baseUrl; };
+            PersonDialog.prototype.afterLoadEntity = function () {
+                _super.prototype.afterLoadEntity.call(this);
+                this.moviesGrid.personID = this.entityId;
+            };
             return PersonDialog;
         }(Serenity.EntityDialog));
         PersonDialog = __decorate([
@@ -1973,6 +1981,53 @@ var MovieTutorial;
             Serenity.Decorators.registerClass()
         ], PersonGrid);
         App.PersonGrid = PersonGrid;
+    })(App = MovieTutorial.App || (MovieTutorial.App = {}));
+})(MovieTutorial || (MovieTutorial = {}));
+var MovieTutorial;
+(function (MovieTutorial) {
+    var App;
+    (function (App) {
+        var PersonMovieGrid = (function (_super) {
+            __extends(PersonMovieGrid, _super);
+            function PersonMovieGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            PersonMovieGrid.prototype.getColumnsKey = function () { return "MovieDB.PersonMovie"; };
+            PersonMovieGrid.prototype.getIdProperty = function () { return App.MovieCastRow.idProperty; };
+            PersonMovieGrid.prototype.getLocalTextPrefix = function () { return App.MovieCastRow.localTextPrefix; };
+            PersonMovieGrid.prototype.getService = function () { return App.MovieCastService.baseUrl; };
+            PersonMovieGrid.prototype.getButtons = function () {
+                return null;
+            };
+            PersonMovieGrid.prototype.getInitialTitle = function () {
+                return null;
+            };
+            PersonMovieGrid.prototype.usePager = function () {
+                return false;
+            };
+            PersonMovieGrid.prototype.getGridCanLoad = function () {
+                return this.personID != null;
+            };
+            Object.defineProperty(PersonMovieGrid.prototype, "personID", {
+                get: function () {
+                    return this._personID;
+                },
+                set: function (value) {
+                    if (this._personID != value) {
+                        this._personID = value;
+                        this.setEquality(App.MovieCastRow.Fields.PersonId, value);
+                        this.refresh();
+                    }
+                },
+                enumerable: true,
+                configurable: true
+            });
+            return PersonMovieGrid;
+        }(Serenity.EntityGrid));
+        PersonMovieGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], PersonMovieGrid);
+        App.PersonMovieGrid = PersonMovieGrid;
     })(App = MovieTutorial.App || (MovieTutorial.App = {}));
 })(MovieTutorial || (MovieTutorial = {}));
 var MovieTutorial;

@@ -564,6 +564,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\ionicons.svg" />
     <Content Include="fonts\Simple-Line-Icons.svg" />
+    <Content Include="Modules\App\Person\App.PersonDialog.Template.html" />
     <Content Include="Modules\Membership\Account\SignUp\AccountSignUp.AdminLTE.cshtml" />
     <Content Include="Imports\Web.config" />
     <Content Include="Migrations\Web.config" />
@@ -1201,6 +1202,7 @@
     <TypeScriptCompile Include="Modules\App\Movie\GenreListFormatter.ts" />
     <TypeScriptCompile Include="Modules\App\Movie\MovieDialog.ts" />
     <TypeScriptCompile Include="Modules\App\Movie\MovieGrid.ts" />
+    <TypeScriptCompile Include="Modules\App\Person\PersonMovieGrid.ts" />
     <TypeScriptCompile Include="Modules\Common\Helpers\EnumSelectFormatter.ts" />
     <TypeScriptCompile Include="Modules\Common\Helpers\LanguageList.ts" />
     <TypeScriptCompile Include="Modules\Common\Helpers\DialogUtils.ts" />
@@ -1657,6 +1659,7 @@
     <Compile Include="Modules\App\Movie\MovieRepository.cs" />
     <Compile Include="Modules\App\Movie\MovieRow.cs" />
     <Compile Include="Modules\App\Person\Gender.cs" />
+    <Compile Include="Modules\App\Person\PersonMovieColumns.cs" />
     <Compile Include="Modules\Common\Helpers\EmailHelper.cs" />
     <Compile Include="Modules\Common\Helpers\ExcelImportRequest.cs" />
     <Compile Include="Modules\Common\Dashboard\DashboardPageModel.cs" />

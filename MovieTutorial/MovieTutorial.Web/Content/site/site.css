@@ -7459,6 +7459,9 @@ section.content > .s-DataGrid {
 .s-App-PersonDialog .caption {
   width: 150px;
 }
+.s-App-PersonDialog .s-PersonMovieGrid > .grid-container {
+  height: 287px;
+}
 .s-App-MovieCastEditDialog > .size {
   width: 450px;
 }

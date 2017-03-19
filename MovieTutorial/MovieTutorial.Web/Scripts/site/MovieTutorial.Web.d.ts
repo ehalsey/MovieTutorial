@@ -1115,6 +1115,9 @@ declare namespace MovieTutorial.App {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: PersonForm;
+        private moviesGrid;
+        constructor();
+        protected afterLoadEntity(): void;
     }
 }
 declare namespace MovieTutorial.App {
@@ -1125,6 +1128,21 @@ declare namespace MovieTutorial.App {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+    }
+}
+declare namespace MovieTutorial.App {
+    class PersonMovieGrid extends Serenity.EntityGrid<MovieCastRow, any> {
+        protected getColumnsKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getButtons(): any;
+        protected getInitialTitle(): any;
+        protected usePager(): boolean;
+        protected getGridCanLoad(): boolean;
+        private _personID;
+        personID: number;
     }
 }
 declare namespace MovieTutorial {
